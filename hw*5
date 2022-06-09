@@ -154,15 +154,9 @@ $_GET['order'] = isset($order) ? $_GET['order'] : null;
         $h=$_POST["d_2"]; 
                 $sum = (7000 * $a)+(10000 * $b)+(12000 * $c)+(16000 * $d)+(21000 * $e)+(26000 * $f)+(70000 * $g)+(90000 * $h);// 다 곱하고 더한값
                 $sql="INSERT INTO lotteworld(name , a_1 , a_2 , b_1 , b_2 , b_1 , c_2, c_1 , c_2, daycycle , sum ) VALUES('$name', $a, $b, $c, $d, $e, $f, $g, $h, $time, $sum)";
-                    // 테이블을 만들고 데이터를 추가해주는 sql 관련함수 insert Into
-                    //이름 넣고 이후 값 넣어주고
+                    
                 mysqli_query($link,$sql);//연결된 객체를 이용하여 MySQL 쿼리를 실행시키는 함수입니다.
-                //&link = mysqli_connect($servername, $username, $password, $dbname);
-                    // mysqli_connect( host, username, password, databasename, port, socket );의 형태를 가진다
-                //mysqli_query([연결 객체], [쿼리]);
-                //https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=diceworld&logNo=220292127761
-
-                /*
+                
                 기본형태 
                     $conn = mysqli_connect("127.0.0.1", "root", "1234", "test_db"); // 주소, 아이디, 비밀번호,이름 
                     $insert_query = "INSERT INTO test_table(seq, name) VALUES(3, '임꺽정')"; // 테이블 
@@ -172,17 +166,7 @@ $_GET['order'] = isset($order) ? $_GET['order'] : null;
             
             $query = "SELECT * FROM lotteworld";  //ticket 테이블에 있는 모든 데이터를 모여줘! 라는 의미입니다.
                 $result = mysqli_query($link,$query)  or die('Query failed: ' . mysqli_error());
-                //SELECT는 데이터를 조회하기 위한 문법, 말 그대로 선택하다(데이터를 선택하다.) ~ 테이블에 있는, ~테이블에서 라는 의미가 된다.
-                /*
-                select * from EMP;
-                =>emp 테이블에 있는 모든(*) 데이터(column)을 보여줘!
-                 
-                select EMPNO from EMP;
-                =>emp 테이블에 있는 empno column만 선택해서 보여줘!
-                 
-                select EMPNO, ENAME, SAL from EMP;
-                =>emp 테이블에 있는 EMPNO, ENAME, SAL Column만 선택해서 보여줘!
-                */
+               
                 if(isset($_POST["name"])) {
 					echo "<br>";
 					echo $name;
